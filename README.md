@@ -9,7 +9,7 @@ This repository contains the code used in the thesis project on **Bi-Text Mining
 - **Synthetic data generation (dictionary-based)** for Bavarian (bar) using the Dialemma lexicon.
 - **Synthetic data generation (LLM-based)** for Low German(nds), Alemannic(gsw)and Bavarian (bar) using GPT-4o.
 
-The project targets dialects such as **Alemannic (als)**, **Low German (nds)**, and **Bavarian (bar)**, consistent with the thesis scope.
+The project targets dialects such as **Alemannic (als/gsw+swg)**, **Low German (nds)**, and **Bavarian (bar)**, consistent with the thesis scope.
 
 
 ---
@@ -60,7 +60,7 @@ pip install sentence-transformers faiss-cpu numpy pytrec_eval rank-bm25
 
 **1.Eval Dataset Construction**
 
-Use `code/1k-100k eval data/1k100k.ipynb` and `code/1k-100k eval data/evalset.ipynb` to create 1k-100k evaluation set.
+Use `code/1k-100k eval data/1k100k.py` and `code/1k-100k eval data/evalset.py` to create 1k-100k evaluation set.
 
 **2.Dictionary-based Synthetic Dataset Construction**
 
@@ -77,7 +77,7 @@ Use `code/dict-base/` folder to create this fine-tuning dataset step by step:
 
 **3.LLM-generated Synthetic Dataset Construction**
 
-Use `de-dialect-gpt.ipynb` to translate de sentences to dialects. `OpenAi_API_Key` is required.
+Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` is required.
 
 
 ---
