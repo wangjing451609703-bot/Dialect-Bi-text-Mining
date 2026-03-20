@@ -7,9 +7,6 @@ python retrieval/zero_shot_dense_fast.py \
   --data_root $BASE/data_eval_fixed99k/gsw \
   --topk 100 --batch 256 --q_batch 128 --fp16 1 --use_faiss 0 \
   --out $BASE/runs/gsw.labse_ft.k100.trec
-
-If you prefer explicit files:
-  --corpus path/to/corpus.tsv --queries path/to/queries.tsv
 """
 
 import argparse
