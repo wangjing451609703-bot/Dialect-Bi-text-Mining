@@ -38,7 +38,7 @@ MODEL_MAP = {
     "LaBSE": "sentence-transformers/LaBSE",
     "BGE-M3": "BAAI/bge-m3",
     "GTE-multilingual": "Alibaba-NLP/gte-multilingual-base",
-    "Qwen3-Embedding": "Qwen/Qwen2.5-7B-Instruct",
+    "Qwen3-Embedding": "Qwen/Qwen3-Embedding-0.6B",
 }
 
 
