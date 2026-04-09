@@ -83,6 +83,15 @@ Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` 
 
 Run `dense_retrieval.py` or `script/zs.sh` for zero-shot baseline. Save the output `*.trec` file name in the format of: `{*DIALECT}.{*MODELS}.-full.k100.mrr_rec_p1.trec`.
 
+Example useage:
+
+```
+bash zs.sh
+--model <model name>
+--data_root <data root path>
+--out <out path>
+```
+
 For BM-25 baseline, run `run_bm25.py` or `script/run_bm25.sh`
 
 **2.Fine-tuning**
