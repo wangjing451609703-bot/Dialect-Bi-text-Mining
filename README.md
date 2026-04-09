@@ -87,8 +87,8 @@ Example useage:
 
 ```
 bash zs.sh
---model <model name>
---data_root <data root path>
+--model <model name> \
+--data_root <data root path> \
 --out <out path>
 ```
 
@@ -98,11 +98,26 @@ For BM-25 baseline, run `run_bm25.py` or `script/run_bm25.sh`
 
 Use `train.py` or `script/finetune_full.sh` to fine-tune models on synthetic dataset.
 
+Example useage:
+
+```
+bash finetune_full.sh
+  --train_dir <training data path> \
+  --dev_dir   <dev data path> \
+  --model     <model name> \
+  --out_dir   <out path> \
+```
+
 
 **3.Evaluation**
 
 Use `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
 
+Example useage:
+
+```
+bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=LaBSE, INTERSECT=0
+```
 
 ---
 ## Acknowledgements
