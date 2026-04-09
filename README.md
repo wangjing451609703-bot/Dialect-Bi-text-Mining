@@ -48,11 +48,7 @@ Use `rank-bm25` to load BM-25
 ---
 ## Requirements
 
-Python 3.10
-
-Pytorch >= 12.1
-
-pip install sentence-transformers faiss-cpu numpy pytrec_eval rank-bm25
+See `requirements.txt` for details.
 
 
 ---
@@ -85,50 +81,18 @@ Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` 
 
 **1.Zero-shot Baseline**
 
-Run `dense_retrieval.py` for zero-shot baseline. Save the output `*.trec` file name in the format of: `{*DIALECT}.{*MODELS}.-full.k100.mrr_rec_p1.trec`.
+Run `dense_retrieval.py` or `script/zs.sh` for zero-shot baseline. Save the output `*.trec` file name in the format of: `{*DIALECT}.{*MODELS}.-full.k100.mrr_rec_p1.trec`.
 
-For BM-25 baseline, run `run_bm25.py`
+For BM-25 baseline, run `run_bm25.py` or `script/run_bm25.sh`
 
 **2.Fine-tuning**
 
-Use `train.py` to fine-tune models on synthetic dataset.
+Use `train.py` or `script/finetune_full.sh` to fine-tune models on synthetic dataset.
 
-Example usage:
-
-```bash
-BASE=$PWD
-TRAIN_DIR="$BASE/data_train_synth/bar/train"
-DEV_DIR="$BASE/data_train_synth/bar/dev"
-OUT_DIR="$BASE/model/labse_ft_bar_de"
-
-python retrieval/train_opus.py \
-  --model LaBSE \
-  --train_dir "$TRAIN_DIR" \
-  --dev_dir "$DEV_DIR" \
-  --output_dir "$OUT_DIR" \
-  --epochs 1 \
-  --batch_size 16 \
-  --lr 2e-5 \
-  --fp16 1 \
-  --eval_steps 1000
-```
 
 **3.Evaluation**
 
-Use `evaluate.py` to get MRR@10, Recall@10 and Precision@1 scores.
-
-Example usage:
-```bash
-BASE=$PWD
-
-python retrieval/evaluate_baseline.py \
-  --qrels "$BASE/data_eval_fixed99k/gsw/qrels.tsv" \
-  --runs \
-    "$BASE/runs/gsw.LaBSE.-full.k100.mrr_rec_p1.trec" \
-    "$BASE/runs/gsw.BM25.-full.k100.mrr_rec_p1.trec" \
-  --k 10 \
-  --out_csv "$BASE/outputs/gsw.k10.csv"
-```
+Use `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
 
 
 ---
