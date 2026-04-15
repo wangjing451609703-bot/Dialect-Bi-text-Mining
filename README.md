@@ -57,7 +57,7 @@ See `requirements.txt` for details.
 
 **1.Eval Dataset Construction**
 
-Use `code/1k-100k eval data/1k100k.py` and `code/1k-100k eval data/evalset.py` to create 1k-100k evaluation set.
+Use `code/1k-100k eval data/1k100k.py` and `code/1k-100k eval data/evalset.py` to create 1k-100k evaluation set. Or use `data/data-1k-100k-new/` for convenience.
 
 **2.Dictionary-based Synthetic Dataset Construction**
 
@@ -72,9 +72,12 @@ Use `code/dict-base/` folder to create this fine-tuning dataset step by step:
 - `04_unify.py`
 - `05_select.py`
 
+Or use `data/data_ft_dialemma/` for convenience.
+
 **3.LLM-generated Synthetic Dataset Construction**
 
-Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` is required.
+Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` is required. Or use `data/data-ft_gpt/` for convenience.
+
 
 
 ---
@@ -155,6 +158,10 @@ Valid choices for "MODEL" param are `ft_dict_LaBSE, ft_dialemma_LaBSE, ft_dialem
 
 
 ### Testing Robustness to Dialect Mixing (in Figure 1):
+
+Run `dialect word replacement.ipynb` to generate data with different proportion of mixed dialect. `OpenAi_API_Key` is required. Or use `data/mixed_bar` for convenience.
+
+Run the same evaluation procedure with `script/zs.sh` and `script/eval.sh` to get the results in Figure 1. Change the data root in params to corresponding path.
 
 ---
 ## Acknowledgements
