@@ -48,7 +48,7 @@ tasks = [
     ("swg", [("Tatoeba.de-swg", "swg")], "de-swg-eval.csv"),
     # gsw
     ("gsw", [("Tatoeba.de-gsw", "gsw")], "de-gsw-eval.csv"),
-    # bar: 兼容 Tatoeba.bar-de.* 或 Tatoeba.de-bar.*
+    # bar: Tatoeba.bar-de.* or Tatoeba.de-bar.*
     ("bar", [("Tatoeba.bar-de", "bar"), ("Tatoeba.de-bar", "bar")], "de-bar-eval.csv"),
     # nds
     ("nds", [("Tatoeba.de-nds", "nds")], "de-nds-eval.csv"),
