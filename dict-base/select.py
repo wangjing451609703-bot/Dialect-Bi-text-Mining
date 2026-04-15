@@ -1,3 +1,7 @@
+"""
+Performs the final sampling split. Select fixed numbers for train and dev at the desired size.
+"""
+
 import argparse, random
 from pathlib import Path
 from typing import Dict, List, Tuple
