@@ -1,5 +1,5 @@
 pytorch==2.10.0
-pytorch-cuda==12.1
+pytorch-cuda==12.8
 torchvision==0.25.0
 torchaudio==2.10.0
 numpy==2.0.2
