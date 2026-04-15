@@ -12,7 +12,7 @@ DIALEMMA="$BASE/dicts"  # change to your dialemma dictionary path
 
 
 
-python "$BASE/dict_translate/bar2de.py" \
+python "$BASE/dict_base/bar2de.py" \
   --step1_root "$STEP1" \
   --data_root  "$DATA" \
   --out_root   "$OUT1" \
@@ -22,7 +22,7 @@ python "$BASE/dict_translate/bar2de.py" \
 echo "[DONE] bar→de dictionary translation finished -> $OUT1."
 
 
-python "$BASE/dict_translate/de2bar.py" \
+python "$BASE/dict_base/de2bar.py" \
   --data_root  "$DATA" \
   --out_root   "$OUT2" \
   --dialemma_path  "$DIALEMMA/dialemma.jsonl" \
@@ -31,7 +31,7 @@ python "$BASE/dict_translate/de2bar.py" \
 echo "[DONE] de→bar dictionary translation finished -> $OUT2."
 
 
-python "$BASE/dict_translate/04_de2dia_align.py" \
+python "$BASE/dict_base/de2dia_align.py" \
   --step3_root "$OUT2" \
   --data_root  "$DATA" \
   --out_root   "$OUT3" \
@@ -41,7 +41,7 @@ python "$BASE/dict_translate/04_de2dia_align.py" \
 echo "[DONE] de→dia alignment and re-indexing finished -> $OUT3."
 
 
-python "$BASE/dict_translate/04_dia2de_align.py" \
+python "$BASE/dict_base/dia2de_align.py" \
   --step2_root "$OUT1" \
   --data_root  "$DATA" \
   --out_root   "$OUT4" \
@@ -51,14 +51,14 @@ python "$BASE/dict_translate/04_dia2de_align.py" \
 echo "[DONE] dia→de alignment and re-indexing finished -> $OUT4."
 
 
-python "$BASE/dict_translate/05_unify.py" \
+python "$BASE/dict_base/unify.py" \
   --step4_root "$OUT4" \
   --step5_root  "$OUT3" \
   --out_root   "$OUT5" 
 echo "[DONE] Step 6 merged & identicals removed successfully."
 
 
-python "$BASE/dict_translate/06_select.py" \
+python "$BASE/dict_base/select.py" \
   --in_root "$OUT5/train" \
   --out_root   "$OUT_Final" \
   --n_train  32458 \
