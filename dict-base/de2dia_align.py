@@ -1,3 +1,7 @@
+"""
+Match the newly translated query with its original corresponding document. Create parallel query-document pairs.
+"""
+
 import argparse
 from pathlib import Path
 from typing import Dict, List, Tuple
