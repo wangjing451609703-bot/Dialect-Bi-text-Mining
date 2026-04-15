@@ -28,7 +28,7 @@ Or use the `data/` folder for preprocessed data:
 - `data-1k-100k-new/`: evaluation set
 - `data_ft_dialemma/`: dictionary-based synthetic data set
 - `data-ft_gpt/`: LLM-generated synthetic data set
-- `wiki-data`: evaluation set extracted from **`WikiMatrix/`** and **`wikimedia/`** for data quality analysis
+- `wiki-data.rar`: evaluation set extracted from **`WikiMatrix/`** and **`wikimedia/`** for data quality analysis
 
 Download the dialect dictionaries used in this project from:
 - `Dialemma`: https://github.com/mainlp/dialemma?tab=readme-ov-file
