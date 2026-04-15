@@ -79,6 +79,8 @@ Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` 
 ---
 ## Running Experiment
 
+### Getting results for zero-shot baselines and fine-tuning (in Table 2):
+
 **1.Zero-shot Baseline**
 
 Run `dense_retrieval.py` or `script/zs.sh` for zero-shot baseline. Save the output `*.trec` file name in the format of: `{*DIALECT}.{*MODELS}.-full.k100.mrr_rec_p1.trec`.
