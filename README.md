@@ -12,7 +12,7 @@ This repository contains the code used in the thesis project on **Bi-Text Mining
 The project targets dialects such as **Alemannic (als/gsw+swg)**, **Low German (nds)**, and **Bavarian (bar)**, consistent with the thesis scope.
 
 
----
+
 ## Data Loading
 
 Download the raw data from **`Tatoeba/`,`WikiMatrix/`,`wikimedia/`** at:
@@ -51,7 +51,7 @@ Use `rank-bm25` to load BM-25
 
 You can download our fine-tuned models from: https://huggingface.co/JW451609703/models. Or you can also train the models locally use the scripts.
 
----
+
 ## Requirements
 
 Install dependencies:
@@ -69,12 +69,13 @@ pip install -q "sentence-transformers<3.0" "transformers>=4.36,<4.50"
 ```
 
 
----
 ## Preprocessed Dataset Construction
 
 **1.Eval Dataset Construction**
 
 Use `1k-100k eval data/1k100k.py` and `1k-100k eval data/evalset.py` to create 1k-100k evaluation set. Or use `data/data-1k-100k-new/` for convenience.
+
+---
 
 **2.Dictionary-based Synthetic Dataset Construction**
 
@@ -82,13 +83,15 @@ Run `script/dict-translate.sh` to generate dictionary-based synthetic dataset. U
 
 Or use `data/data_ft_dialemma/` for convenience.
 
+---
+
 **3.LLM-generated Synthetic Dataset Construction**
 
 Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` is required. Or use `data/data-ft_gpt/` for convenience.
 
 
 
----
+
 ## Running Experiment
 
 ### Getting results for zero-shot baselines, BM25 and fine-tuning (in Table 2, 3 and 4):
@@ -113,6 +116,7 @@ bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=BM25, INTERSECT=0
 
 Valid choices for "DIALECT" param are `bar, nds, gsw`.
 
+---
 
 **2.Zero-shot Baseline (Table 3 "Lexical Retrieval Baseline" and "Zero-Shot Evaluation", Table 4)**
 
@@ -139,6 +143,8 @@ bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=LaBSE, INTERSECT=0
 
 Valid choices for "DIALECT" param are `bar, nds, gsw, en`, for  "MODEL" are `LaBSE, GTE-multilingual, BGE-M3, Qwen3-Embedding, BM25`.
 
+---
+
 **3.Fine-tuning (Table 3 "Fine-tuning on dictionary-based/LLM-generated translations")**
 
 Use `train.py` or `script/finetune_full.sh` to fine-tune models on synthetic dataset.
@@ -164,6 +170,8 @@ bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=ft_gpt_LaBSE, INTERS
 
 Valid choices for "MODEL" param are `ft_dict_LaBSE, ft_dialemma_LaBSE, ft_dialemma_qwen3, ft_gpt_LaBSE, ft_gpt_qwen3, ft_gpt_gte, ft_dialemma_bge, ft_gpt_bge`
 
+---
+
 
 ### Testing Robustness to Dialect Mixing (in Figure 1):
 
@@ -171,7 +179,7 @@ Run `dialect word replacement.ipynb` to generate data with different proportion 
 
 Run the same evaluation procedure with `script/zs.sh` and `script/eval.sh` to get the results in Figure 1. Change the data root in params to corresponding path.
 
----
+
 ## Acknowledgements
 
 Code in `dense_retrieval.py` and `run_bm25.py` are partly adapted from:
