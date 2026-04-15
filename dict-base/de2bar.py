@@ -1,3 +1,9 @@
+"""
+Replace de-word to bar and generate Bavarian-like queries.
+Use DiaLemma to enable word-by-word substitution and build qrel map to match query-document pairs.
+Set a max expansion to 30 as 1 de-word might have multiple corresponding bar-variants.
+"""
+
 import argparse, json, itertools, random
 from pathlib import Path
 from typing import Dict, List, Tuple
@@ -155,7 +161,7 @@ def main():
     ap.add_argument("--out_root", required=True, help="Output root for Step 3 results")
     ap.add_argument("--dialemma_path", required=True)
     ap.add_argument("--lowercase_match", action="store_true")
-    ap.add_argument("--max_expansions", type=int, default=50, help="Cap number of expanded variants per sentence")
+    ap.add_argument("--max_expansions", type=int, default=30, help="Cap number of expanded variants per sentence")
     ap.add_argument("--no_variant_suffix", action="store_true", help="Do not append -v{idx} when multiple variants are produced")
     args = ap.parse_args()
 
