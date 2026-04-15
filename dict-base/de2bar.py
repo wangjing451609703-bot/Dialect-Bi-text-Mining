@@ -1,6 +1,6 @@
 """
 Replace de-word to bar and generate Bavarian-like queries.
-Use DiaLemma to enable word-by-word substitution and build qrel map to match query-document pairs.
+Use DiaLemma to enable word-by-word substitution and build qrel map to match query id with queries.
 Set a max expansion to 30 as 1 de-word might have multiple corresponding bar-variants.
 """
 
