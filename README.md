@@ -79,7 +79,7 @@ Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` 
 ---
 ## Running Experiment
 
-### Getting results for zero-shot baselines and fine-tuning (in Table 2):
+### Getting results for zero-shot baselines, BM25 and fine-tuning (in Table 2 & 3):
 
 **1.Zero-shot Baseline**
 
@@ -94,7 +94,17 @@ bash zs.sh
 --out <out path>
 ```
 
-For BM-25 baseline, run `run_bm25.py` or `script/run_bm25.sh`
+For BM-25 baseline, run `run_bm25.py` or `script/run_bm25.sh`. Save the output `*.trec` file name in the format of: `{*DIALECT}.bm25.-full.k100.mrr_rec_p1.trec`. 
+
+Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores (in Table 3 "Lexical Retrieval Baseline" and "Zero-Shot Evaluation").
+
+Example useage:
+
+```
+bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=LaBSE, INTERSECT=0
+```
+
+Valid choices for "DIALECT" param are `bar/nds/gsw/en`, for  "MODEL" are `LaBSE/GTE-multilingual/BGE-M3/Qwen3-Embedding/BM25`.
 
 **2.Fine-tuning**
 
@@ -109,18 +119,16 @@ bash finetune_full.sh
   --model     <model name> \
   --out_dir   <out path> \
 ```
-
-
-**3.Evaluation**
-
-Use `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
+Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
 
 Example useage:
 
 ```
-bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=LaBSE, INTERSECT=0
+bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=<model name>, INTERSECT=0
 ```
 
+
+### Getting results for the 
 ---
 ## Acknowledgements
 
