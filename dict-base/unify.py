@@ -1,3 +1,7 @@
+"""
+Merge the newly create parallel query-document pairs into one pool. Apply deduplication.
+"""
+
 import argparse
 from pathlib import Path
 from typing import Dict, List, Tuple, Set
