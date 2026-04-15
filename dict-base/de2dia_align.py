@@ -1,5 +1,5 @@
 """
-Match the newly translated query with its original corresponding document. Create parallel query-document pairs.
+Match the newly translated query with its original corresponding document. Create parallel query-document pairs and re-index.
 """
 
 import argparse
