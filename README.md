@@ -47,6 +47,11 @@ Use `SentenceTransformer` to load baseline bi-encoder models.
 Use `rank-bm25` to load BM-25
 
 ---
+### Fine-tuned Models
+
+You can download our fine-tuned models from: https://huggingface.co/JW451609703/models. Or you can also train the models locally use the scripts.
+
+---
 ## Requirements
 
 See `requirements.txt` for details.
