@@ -62,7 +62,7 @@ pip install -U sentence-transformers faiss-cpu openai tqdm pandas pytrec_eval ra
 
 See `requirements.txt` for details. 
 
-For `GTE-multilingual`, we recommand following versions:
+**For `GTE-multilingual`, we recommand following versions:**
 
 ```
 pip install -q "sentence-transformers<3.0" "transformers>=4.36,<4.50" 
@@ -74,20 +74,11 @@ pip install -q "sentence-transformers<3.0" "transformers>=4.36,<4.50"
 
 **1.Eval Dataset Construction**
 
-Use `code/1k-100k eval data/1k100k.py` and `code/1k-100k eval data/evalset.py` to create 1k-100k evaluation set. Or use `data/data-1k-100k-new/` for convenience.
+Use `1k-100k eval data/1k100k.py` and `1k-100k eval data/evalset.py` to create 1k-100k evaluation set. Or use `data/data-1k-100k-new/` for convenience.
 
 **2.Dictionary-based Synthetic Dataset Construction**
 
-Use `code/dict-base/` folder to create this fine-tuning dataset step by step:
-
-- `00_load_dataset.py`
-- `01_split_by_dialect.py`
-- `02_de2bar.py`
-- `02_bar2de.py`
-- `03_dia2de_align.py`
-- `03_de2dia_align.py`
-- `04_unify.py`
-- `05_select.py`
+Run `script/dict-translate.sh` to generate dictionary-based synthetic dataset. Use `dict-base/data_wiki_mixed/` (merged data source of bar/nds/gsw-de from WikiMatrix and wikimedia) and `dict-base/data-dict-split/` (split the former by dialect group) as source data. Please replace the corresonding file path according to the instruction in the script.
 
 Or use `data/data_ft_dialemma/` for convenience.
 
