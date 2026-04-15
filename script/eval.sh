@@ -1,7 +1,7 @@
 DIALECT="${DIALECT:-gsw nds bar en}"        
 K="${K:-10}"                                            
 TAG="${TAG:-full.k100}"                                  
-MODELS="${MODELS:-LaBSE Qwen3 BGE-M3 GTE-multilingual qwen3_ins ft_LaBSE ft_dict_LaBSE ft_dialemma_LaBSE ft_dialemma_qwen3  ft_gpt_LaBSE ft_gpt_qwen3 ft_ins_qwen3 ft_gpt_gte ft_dialemma_bge ft_gpt_bge BM25}" 
+MODELS="${MODELS:-LaBSE Qwen3 BGE-M3 GTE-multilingual qwen3_ins ft_dict_LaBSE ft_dialemma_LaBSE ft_dialemma_qwen3 ft_gpt_LaBSE ft_gpt_qwen3 ft_ins_qwen3 ft_gpt_gte ft_dialemma_bge ft_gpt_bge BM25}" 
 INTERSECT="${INTERSECT:-0}"                  
 
 
