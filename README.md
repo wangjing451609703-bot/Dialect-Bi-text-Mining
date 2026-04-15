@@ -28,6 +28,7 @@ Or use the `data/` folder for preprocessed data:
 - `data-1k-100k-new/`: evaluation set
 - `data_ft_dialemma/`: dictionary-based synthetic data set
 - `data-ft_gpt/`: LLM-generated synthetic data set
+- `wiki-data`: evaluation set extracted from **`WikiMatrix/`** and **`wikimedia/`** for data quality analysis
 
 Download the dialect dictionaries used in this project from:
 - `Dialemma`: https://github.com/mainlp/dialemma?tab=readme-ov-file
@@ -80,6 +81,13 @@ Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` 
 ## Running Experiment
 
 ### Getting results for zero-shot baselines, BM25 and fine-tuning (in Table 2 & 3):
+
+**1. data quality analysis**
+
+Run `run_bm25.py` or `script/run_bm25.sh`, use `data/wiki-data`.
+
+Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores in Table 2.
+
 
 **1.Zero-shot Baseline**
 
