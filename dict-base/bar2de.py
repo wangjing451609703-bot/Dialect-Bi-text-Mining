@@ -1,6 +1,6 @@
 """
 Replace bar-word to de and generate German-like documents.
-Use DiaLemma to enable word-by-word substitution and build qrel map to match query-document pairs.
+Use DiaLemma to enable word-by-word substitution and build qrel map to match doc id with documents.
 """
 
 import argparse, json, re
