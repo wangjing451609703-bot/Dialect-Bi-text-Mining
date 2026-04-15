@@ -54,13 +54,19 @@ You can download our fine-tuned models from: https://huggingface.co/JW451609703/
 ---
 ## Requirements
 
-`pip install -U sentence-transformers faiss-cpu openai tqdm pandas pytrec_eval rank-bm25 transformers`
+Install dependencies:
+
+```
+pip install -U sentence-transformers faiss-cpu openai tqdm pandas pytrec_eval rank-bm25 transformers
+```
 
 See `requirements.txt` for details. 
 
 For `GTE-multilingual`, we recommand following versions:
 
-`pip install -q "sentence-transformers<3.0" "transformers>=4.36,<4.50" `
+```
+pip install -q "sentence-transformers<3.0" "transformers>=4.36,<4.50" 
+```
 
 
 ---
