@@ -49,7 +49,7 @@ Use `rank-bm25` to load BM-25
 ---
 ### Fine-tuned Models
 
-Please download our fine-tuned models from: https://huggingface.co/JW451609703/models. Or train the models locally use the scripts.
+Please download our fine-tuned models of LaBSE, BGE and Qwen3 from: https://huggingface.co/JW451609703/models. Or train the models locally use the scripts.
 
 
 ## Requirements
