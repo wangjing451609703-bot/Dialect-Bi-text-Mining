@@ -27,7 +27,7 @@ python "$BASE/dict_base/de2bar.py" \
   --out_root   "$OUT2" \
   --dialemma_path  "$DIALEMMA/dialemma.jsonl" \
   --lowercase_match \
-  --max_expansions 50
+  --max_expansions 30
 echo "[DONE] de→bar dictionary translation finished -> $OUT2."
 
 
