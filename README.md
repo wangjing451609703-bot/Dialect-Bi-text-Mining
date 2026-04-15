@@ -82,7 +82,7 @@ Use `de-dialect-gpt.py` to translate de sentences to dialects. `OpenAi_API_Key` 
 
 ### Getting results for zero-shot baselines, BM25 and fine-tuning (in Table 2, 3 and 4):
 
-**1. data quality analysis**
+**1. data quality analysis (Table 2)**
 
 Run `run_bm25.py` or `script/run_bm25.sh`. Save the output `*.trec` file name in the format of: `{*DIALECT}.BM25.-full.k100.mrr_rec_p1.trec`.
 
@@ -92,7 +92,7 @@ Example usage:
 bash run_bm25.sh --data_root "<wiki-data root>"
 ```
 
-Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores in Table 2.
+Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
 
 Example useage:
 
@@ -103,7 +103,7 @@ bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=BM25, INTERSECT=0
 Valid choices for "DIALECT" param are `bar, nds, gsw`.
 
 
-**1.Zero-shot Baseline**
+**2.Zero-shot Baseline (Table 3 "Lexical Retrieval Baseline" and "Zero-Shot Evaluation", Table 4)**
 
 Run `dense_retrieval.py` or `script/zs.sh` for zero-shot baseline. Save the output `*.trec` file name in the format of: `{*DIALECT}.{*MODELS}.-full.k100.mrr_rec_p1.trec`.
 
@@ -118,7 +118,7 @@ bash zs.sh
 
 For BM-25 baseline, run `run_bm25.py` or `script/run_bm25.sh`. Change the `data_root` param to `data/data-1k100k-new`.
 
-Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores in Table 3 ("Lexical Retrieval Baseline" and "Zero-Shot Evaluation") and Table 4.
+Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
 
 Example useage:
 
@@ -128,7 +128,7 @@ bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=LaBSE, INTERSECT=0
 
 Valid choices for "DIALECT" param are `bar, nds, gsw, en`, for  "MODEL" are `LaBSE, GTE-multilingual, BGE-M3, Qwen3-Embedding, BM25`.
 
-**2.Fine-tuning**
+**3.Fine-tuning (Table 3 "Fine-tuning on dictionary-based/LLM-generated translations")**
 
 Use `train.py` or `script/finetune_full.sh` to fine-tune models on synthetic dataset.
 
@@ -141,13 +141,17 @@ bash finetune_full.sh
   --model     <model name> \
   --out_dir   <out path> \
 ```
-Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores in Table 3 ("Fine-tuning on dictionary-based/LLM-generated translations" ).
+Run `dense_retrieval.py` or `script/zs.sh` to get the `*.trec` file. For the `--model` param, example could be `$BASE/out path of finetune_full.sh/labse.mixed`.
+
+Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
 
 Example useage:
 
 ```
-bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=<model name>, INTERSECT=0
+bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=ft_gpt_LaBSE, INTERSECT=0
 ```
+
+Valid choices for "MODEL" param are `ft_dict_LaBSE, ft_dialemma_LaBSE, ft_dialemma_qwen3, ft_gpt_LaBSE, ft_gpt_qwen3, ft_gpt_gte, ft_dialemma_bge, ft_gpt_bge`
 
 
 ### Testing Robustness to Dialect Mixing (in Figure 1):
