@@ -1,7 +1,7 @@
 BASE="${PROJECT_DIR:-$HOME}/dialect-retrieval"   # change to your base path
 
 STEP1="$BASE/data-dict-split"          
-DATA="$BASE/data_dict_mixed"           
+DATA="$BASE/data_wiki_mixed"           
 OUT1="$BASE/data_dict/bar2de"  # change to your out path for bar-de translated sentences
 OUT2="$BASE/data_dict/de2bar"  # change to your out path for de-bar translated sentences
 OUT3="$BASE/data_dict/align/de-bar"  # change to your out path for aligned de-bar pairs (as query side)
