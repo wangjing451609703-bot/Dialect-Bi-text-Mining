@@ -109,7 +109,7 @@ Run `run_bm25.py` or `script/run_bm25.sh`. Save the output `*.trec` file name in
 Example usage:
 
 ```
-bash run_bm25.sh --data_root "<wiki-data root>"
+bash run_bm25.sh --data_root "<wiki-data root>" --out "<OUT_FILE_NAME>"
 ```
 
 Run `evaluate.py` or `script/eval.sh` to get MRR@10, Recall@10 and Precision@1 scores.
