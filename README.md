@@ -57,10 +57,16 @@ Please download our fine-tuned models of LaBSE, BGE and Qwen3 from: https://hugg
 Install dependencies:
 
 ```
-pip install -U sentence-transformers faiss-cpu openai tqdm pandas pytrec_eval rank-bm25 transformers
+conda create -n dense_retrieval python=3.11
+conda activate dense_retrieval
+python -m pip install --upgrade pip setuptools wheel
+
+python -m pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu128
+
+python -m pip install -r requirements.txt
 ```
 
-See `requirements.txt` for details. 
+
 
 **For `GTE-multilingual`, we recommand following versions:**
 
