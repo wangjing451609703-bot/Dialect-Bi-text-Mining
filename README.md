@@ -66,6 +66,17 @@ python -m pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --ind
 python -m pip install -r requirements.txt
 ```
 
+If you use CPU instead of GPU, please run:
+
+```
+conda create -n dense_retrieval python=3.11
+conda activate dense_retrieval
+python -m pip install --upgrade pip setuptools wheel
+
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+python -m pip install -r requirements.txt
+```
 
 
 **For `GTE-multilingual`, we recommand following versions:**
@@ -174,7 +185,7 @@ Example useage:
 bash zs.sh --export DIALECT=bar, K=10, TAG=full.k100, MODEL=ft_gpt_LaBSE, INTERSECT=0
 ```
 
-Valid choices for "MODEL" param are `ft_dict_LaBSE, ft_dialemma_LaBSE, ft_dialemma_qwen3, ft_gpt_LaBSE, ft_gpt_qwen3, ft_gpt_gte, ft_dialemma_bge, ft_gpt_bge`
+Valid choices for "MODEL" param are `ft_dialemma_LaBSE, ft_dialemma_LaBSE, ft_dialemma_qwen3, ft_gpt_LaBSE, ft_gpt_qwen3, ft_gpt_gte, ft_dialemma_bge, ft_gpt_bge`
 
 ---
 
