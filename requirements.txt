@@ -3,3 +3,4 @@ numpy==2.0.2
 pandas==2.2.2
 sentence-transformers==5.4.1
 sklearn-pandas==2.2.0
+rank-bm25
